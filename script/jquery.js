@@ -1,9 +1,24 @@
-jQuery(function() {
-    $("#new-quote").on("click", function() {
-        $(".quote-text").text('"Lorem ipsum dolor sit amer! I am a test string! Please don\'t mind me here okay? Just keep doing whatever you were doing before."')
-    })
+import quotes from "./quotes.js";
 
-    $(".quote-text").on("mouseleave", function() {
-        $(".quote-text").text("Hello there!")
-    })
+jQuery(function() {
+    $(".quote-text").text(quotes[0].quote);
+    $(".author-text").text('- ' + quotes[0].author);
+
+    $("#new-quote").on("click", function() {
+        let item = 0;
+        let previousItem = 0;
+        while (item == previousItem) {
+            console.log(item, previousItem);
+            previousItem = item;
+            item =  Math.floor(Math.random()*quotes.length);
+        }
+        $(".quote-text").text(quotes[item].quote);
+        $(".author-text").text('- ' + quotes[item].author);
+    });
+
+    $("#new-quote").on("mouseenter", function(){
+        $(this).css(
+            {'cursor': 'pointer'}
+        )
+    });
 });
