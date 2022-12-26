@@ -5,7 +5,7 @@
 }
 
 body {
-    background-color: blanchedalmond;
+    background-color: black;
     font-family: 'Fredericka the Great', sans-serif;
 }
 
@@ -45,12 +45,28 @@ body {
     margin-bottom: 1.5rem;
 }
 
+.button-box {
+    /* background-color: aquamarine; */
+    display: flex;
+    justify-content: flex-end;
+    align-content: center;
+}
+
+.tweet-quote {
+    text-decoration: none;
+}
+
+.twitter-logo {
+    position: absolute;
+    left: 4rem;
+    height: 40px;
+}
+
 .button {
-    position: relative;
-    left: 300px;
+    color: white;
     width: 100px;
     height: 40px;
-    background-color: blanchedalmond;
+    background-color: black;
     border: 0;
     border-radius: 5px;
 }
