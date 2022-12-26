@@ -4,16 +4,25 @@ jQuery(function() {
     $(".quote-text").text(quotes[0].quote);
     $(".author-text").text('- ' + quotes[0].author);
 
-    $("#new-quote").on("click", function() {
-        let item = 0;
-        let previousItem = 0;
-        while (item == previousItem) {
-            console.log(item, previousItem);
-            previousItem = item;
-            item =  Math.floor(Math.random()*quotes.length);
-        }
+    function newQuote() {
+        $(".box").animate(
+            {left: '+=100vw'}, 
+            500, 
+            "swing", 
+            function() {$(".box").removeAttr("style")}
+        );
+        let item = Math.floor(Math.random()*quotes.length);
         $(".quote-text").text(quotes[item].quote);
         $(".author-text").text('- ' + quotes[item].author);
+    };
+
+    $("#new-quote").on("click", function() {
+        $(".box").animate(
+            {left: '-=100vw'}, 
+            1000, 
+            "swing", 
+            function() {newQuote();}
+        );
     });
 
     $("#new-quote").on("mouseenter", function(){
