@@ -1,29 +1,33 @@
 import quotes from "./quotes.js";
 
 jQuery(function() {
-    $(".quote-text").text(quotes[0].quote);
-    $(".author-text").text('- ' + quotes[0].author);
+    newQuote();
 
     function newQuote() {
-        $(".box").animate(
-            {left: '+=130vw'}, 
-            1000, 
-            "swing", 
-            function() {$(".box").removeAttr("style")}
-        );
         let item = Math.floor(Math.random()*quotes.length);;
         $(".quote-text").text(quotes[item].quote);
         $(".author-text").text('- ' + quotes[item].author);
     };
 
-    $("#new-quote").on("click", function() {
+    function slide(slideValue) {
         $(".box").animate(
-            {left: '-=130vw'}, 
+            {'left': '-=' + slideValue}, 
             1000, 
-            "swing", 
+            "swing",
             function() {newQuote();}
         );
+        $(".box").animate(
+            {'left': '+=' +  slideValue}, 
+            1000, 
+            "swing",
+            function() {$(".box").removeAttr("style")}
+        );
+    };
+
+    $("#new-quote").on("click", function() {
+        slide('130vw');
     });
+
 
     $("#new-quote").on("mouseenter", function(){
         $(this).css(
