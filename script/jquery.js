@@ -6,19 +6,19 @@ jQuery(function() {
 
     function newQuote() {
         $(".box").animate(
-            {left: '+=100vw'}, 
-            500, 
+            {left: '+=130vw'}, 
+            1000, 
             "swing", 
             function() {$(".box").removeAttr("style")}
         );
-        let item = Math.floor(Math.random()*quotes.length);
+        let item = Math.floor(Math.random()*quotes.length);;
         $(".quote-text").text(quotes[item].quote);
         $(".author-text").text('- ' + quotes[item].author);
     };
 
     $("#new-quote").on("click", function() {
         $(".box").animate(
-            {left: '-=100vw'}, 
+            {left: '-=130vw'}, 
             1000, 
             "swing", 
             function() {newQuote();}
