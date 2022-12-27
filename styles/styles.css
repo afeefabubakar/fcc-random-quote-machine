@@ -9,62 +9,10 @@ body {
     font-family: 'Fredericka the Great', sans-serif;
 }
 
+/* Used to position elements at the absolute center */
 .centered {
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
-
-.box {
-    display: flex;
-    background-color: white;
-    border-radius: 0.5rem;
-    padding: 3rem;
-}
-
-.quote-box {
-    max-width: 25rem;
-    min-width: 18rem;
-    margin: 0 auto;
-    
-}
-
-.quote-text {
-    font-size: 2.5rem;
-    text-align: center;
-    margin-bottom: 1rem;
-}
-
-.author-text {
-    text-align: right;
-    font-size: 1.35rem;
-    margin-bottom: 2.5rem;
-}
-
-.button-box {
-    display: flex;
-    justify-content: flex-end;
-    align-content: center;
-}
-
-.tweet-quote {
-    text-decoration: none;
-}
-
-.twitter-logo {
-    position: absolute;
-    left: 4rem;
-    height: 2.5rem;
-}
-
-.button {
-    color: white;
-    width: 6.25rem;
-    height: 2.5rem;
-    background-color: black;
-    border: 0;
-    border-radius: 0.3125rem;
-}
-
-
