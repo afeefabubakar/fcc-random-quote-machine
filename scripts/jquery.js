@@ -1,16 +1,36 @@
 import newQuote from "./newquote.js";
+import newColor from "./newcolor.js";
 import slide from "./slide.js";
 
 jQuery(function() {
     newQuote();
+    newColor();
     
-    $("#new-quote").on("click", function() {
+    $(".button").on("click", function() {
         slide('130vw');
+        newColor();
     });
 
-    $("#new-quote").on("mouseenter", function(){
+    $(window).on("keypress", function(event) {
+        if(event.which == 13) {
+            slide('130vw');
+            newColor();
+        }
+    });
+
+    $(".button").on("mouseenter", function(){
         $(this).css(
-            {'cursor': 'pointer'}
+            {
+                'filter': 'brightness(120%)'
+            }
+        )
+    });
+
+    $(".button").on("mouseleave", function(){
+        $(this).css(
+            {
+                'filter': 'brightness(100%)'
+            }
         )
     });
 });

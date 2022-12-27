@@ -5,7 +5,9 @@
 }
 
 body {
-    background-color: black;
+    background: black;
+    transition: background 2s linear;
+    -webkit-transition: background 2s linear;
     font-family: 'Fredericka the Great', sans-serif;
 }
 
